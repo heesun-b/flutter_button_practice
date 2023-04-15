@@ -33,29 +33,42 @@ class Homepage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                  overlayColor: MaterialStateProperty.all(Colors.black),
+                  padding: MaterialStateProperty.resolveWith(
+                      (Set<MaterialState> states) {
+                    return EdgeInsets.symmetric(vertical: 20);
+                  }),
+                ),
+                child: Text("Button Style"),
+              ),
+              ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.red,
                   foregroundColor: Colors.black,
                   shadowColor: Colors.green,
                   elevation: 10.0,
-                  textStyle: TextStyle(
-                    fontWeight: FontWeight.w700
-                  ),
+                  textStyle: TextStyle(fontWeight: FontWeight.w700),
                   padding: EdgeInsets.symmetric(vertical: 20),
-                  side: BorderSide(
-                    color: Colors.black,
-                    width: 4.0
-                  )
-
+                  side: BorderSide(color: Colors.black, width: 2.0),
                 ),
                 onPressed: () {},
                 child: Text("ElevatedButton"),
               ),
               OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  foregroundColor: Colors.yellow,
+                ),
                 onPressed: () {},
                 child: Text("OutlinedButton"),
               ),
               TextButton(
+                style: TextButton.styleFrom(
+                    backgroundColor: Colors.yellow,
+                    textStyle: TextStyle(fontWeight: FontWeight.w300),
+                    padding: EdgeInsets.symmetric(vertical: 20)),
                 onPressed: () {},
                 child: Text("TextButton"),
               ),
